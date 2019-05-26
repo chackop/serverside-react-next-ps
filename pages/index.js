@@ -1,4 +1,6 @@
-class Hello extends React.Component {
+import React from "react";
+
+class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,15 +25,13 @@ class Hello extends React.Component {
   }
 
   render() {
-    return React.createElement(
-      "h1",
-      { className: "red" },
-      "Server Side React: " + this.state.time
+    return (
+      <h1>
+        Server Side:
+        {this.state.time}
+      </h1>
     );
   }
 }
 
-ReactDOM.render(
-  React.createElement(Hello, { time: new Date().toLocaleTimeString() }, null),
-  document.getElementById("app")
-);
+export default Index;
