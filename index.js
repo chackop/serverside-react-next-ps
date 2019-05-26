@@ -1,11 +1,16 @@
 // const myReactElement = React.createElement('h1',
 //     {className: 'red'},
-//     'Hello world');
+//     'Hello World');
 
-const myReactElement = React.createElement(
-  "h1",
-  { className: "red" },
-  "Hello world"
+const Hello = props => {
+  return React.createElement(
+    "h1",
+    { className: "red" },
+    "Hello WOrld" + props.time
+  );
+};
+
+ReactDOM.render(
+  React.createElement(Hello, { time: new Date().toLocaleTimeString() }, null),
+  document.getElementById("app")
 );
-
-ReactDOM.render(myReactElement, document.getElementById("app"));
