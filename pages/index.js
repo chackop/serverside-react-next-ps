@@ -1,17 +1,18 @@
 import React from "react";
+import DigitalClock from "../src/DigitalClock";
 
 class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: new Date().toLocaleString()
+      time: new Date().toISOString()
     };
   }
 
   tick() {
     this.setState(() => {
       return {
-        time: new Date().toLocaleString()
+        time: new Date().toISOString()
       };
     });
   }
@@ -25,12 +26,7 @@ class Index extends React.Component {
   }
 
   render() {
-    return (
-      <h1>
-        Server Side:
-        {this.state.time}
-      </h1>
-    );
+    return <DigitalClock time={this.state.time} />;
   }
 }
 
