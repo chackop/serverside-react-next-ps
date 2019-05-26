@@ -2,10 +2,22 @@ import React from "react";
 import DigitalClock from "../src/DigitalClock";
 
 class Index extends React.Component {
-  static async getInitialProps() { // Does not get run on client
-    return {
-      time: new Date().toISOString()
-    };
+  // Does not get run on client
+  static async getInitialProps() {
+    // return {
+    //   time: new Date().toISOString()
+    // };
+
+    // const promise = new Promise((resolve, reject) => {
+    //   setInterval(() => {
+    //     resolve({
+    //       time: new Date().toISOString()
+    //     });
+    //   }, 3000);
+    // });
+    // return promise;
+
+    
   }
 
   constructor(props) {
