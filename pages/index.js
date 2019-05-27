@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/site.css";
+import { Header } from "../src/Header";
+import { Menu } from "../src/Menu";
+import { Footer } from "../src/Footer";
 
 class Index extends Component {
   static async getInitialProps() {
+    // console.log(`process.env.NODE_ENV: ${process.env.NODE_ENV}`);
     return {};
   }
 

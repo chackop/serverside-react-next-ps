@@ -11,7 +11,7 @@ const ssrCache = new LRUCache({
     return n.toString().length + key.toString().length;
   },
   max: 100 * 1000 * 1000, // 100MB cache soft limit
-  maxAge: 1000 * 10 // 1000 * 10 is 10 seconds
+  maxAge: 1000 * 10 // 1000 * 60 * 60 // 1hour
 });
 
 app

@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import SessionCard from "../src/SessionCard";
+import SessionCard from "../src/sessionCard";
 import getConfig from "next/config";
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
@@ -15,7 +15,6 @@ class Sessions extends React.Component {
       return process.env.RESTURL_SESSIONS_DEV;
     }
   }
-
   static async getInitialProps() {
     var promise = axios
       .get(Sessions.GetSessionsUrl())
@@ -42,10 +41,6 @@ class Sessions extends React.Component {
       sessionData: props.sessionData
     };
   }
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
 
   render() {
     return (

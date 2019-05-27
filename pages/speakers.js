@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import SpeakerCard from "../src/SpeakerCard";
+import SpeakerCard from "../src/speakerCard";
 
 import getConfig from "next/config";
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
@@ -16,7 +16,6 @@ class Speakers extends React.Component {
       return process.env.RESTURL_SPEAKERS_DEV;
     }
   }
-
   static async getInitialProps() {
     var promise = axios
       .get(Speakers.GetSpeakersUrl())
@@ -43,10 +42,6 @@ class Speakers extends React.Component {
       speakerData: props.speakerData
     };
   }
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
 
   render() {
     return (

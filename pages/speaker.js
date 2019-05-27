@@ -14,7 +14,6 @@ class Speaker extends Component {
       return process.env.RESTURL_SPEAKER_DEV;
     }
   }
-
   static async getInitialProps({ query }) {
     var promise = axios
       .get(`${Speaker.GetSpeakerUrl()}/${query.speakerId}`)
@@ -33,15 +32,24 @@ class Speaker extends Component {
     return promise;
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasErrored: props.hasErrored,
+      message: props.message,
+      speakerDataOne: props.speakerDataOne
+    };
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
           <h2 className="margintopbottom20">
-            {this.props.speakerDataOne.firstName}{" "}
-            {this.props.speakerDataOne.lastName}
+            {this.state.speakerDataOne.firstName}{" "}
+            {this.state.speakerDataOne.lastName}
           </h2>
-          <p className="margintopbottom20">{this.props.speakerDataOne.bio}</p>
+          <p className="margintopbottom20">{this.state.speakerDataOne.bio}</p>
         </div>
       </div>
     );
