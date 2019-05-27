@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import svccImg from "../static/SVCClogo.png";
 
 export class Header extends Component {
   render() {
@@ -11,9 +12,9 @@ export class Header extends Component {
           </div>
           <div className="col-12 col-sm-8 text-lg-right">
             <div>
-              <img src="/static/SVCClogo.png" />
+              <img src={svccImg} />
             </div>
-            <h2>Silicon Valley Code Camp 2018</h2>
+            <h2>Silicon Valley Code Camp 2018x</h2>
           </div>
         </div>
       </div>
