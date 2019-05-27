@@ -14,7 +14,7 @@ export class Header extends Component {
             <div>
               <img src={svccImg} />
             </div>
-            <h2>Silicon Valley Code Camp 2018x</h2>
+            <h2>Silicon Valley Code Camp 2018</h2>
           </div>
         </div>
       </div>

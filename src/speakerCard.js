@@ -1,11 +1,27 @@
 import { Component } from "react";
 import React from "react";
 import Link from "next/link";
+import ReactPlaceholder from "react-placeholder";
+import "react-placeholder/lib/reactPlaceholder.css";
+import {
+  TextBlock,
+  MediaBlock,
+  TextRow,
+  RectShape,
+  RoundShape
+} from "react-placeholder/lib/placeholders";
 
 class SpeakerCard extends Component {
   render() {
+    const awesomePlaceholder1 = <MediaBlock color="#E0E0E0" rows={6} />;
+
     return (
-      <div>
+      <ReactPlaceholder
+        showLoadingAnimation
+        delay={2500}
+        ready={!this.props.isLoading}
+        customPlaceholder={awesomePlaceholder1}
+      >
         <img
           className="card-img-top"
           src={`/static/speakers/Speaker-${this.props.speaker.id}.jpg`}
@@ -29,7 +45,7 @@ class SpeakerCard extends Component {
           </h4>
           <p className="card-text">{this.props.speaker.bioShort}</p>
         </div>
-      </div>
+      </ReactPlaceholder>
     );
   }
 }
